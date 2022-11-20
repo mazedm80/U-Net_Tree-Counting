@@ -10,12 +10,12 @@ def image_to_nparray(image_path: Path, mask_path: Path, band_no: int) -> Tuple[n
     Takes image path and mask path and convert them into numpy array.
 
     Args:
-        image_path (Path): Image path
-        mask_path (Path): Mask path
-        band_no (int): number of image band
+        image_path (Path): Image path.
+        mask_path (Path): Mask path.
+        band_no (int): number of image band.
 
     Returns:
-        Tuple[np.ndarray, np.ndarray]: returns both the image and mask as numpy array
+        Tuple[np.ndarray, np.ndarray]: returns both the image and mask as numpy array.
     """
     with rs.open(image_path) as img:
         image = img.read(list(range(1, band_no + 1)))
@@ -32,11 +32,11 @@ def image_transformation(image: np.ndarray, mask: np.ndarray) -> Tuple[np.ndarra
     Apply random transformation to the image and mask.
 
     Args:
-        image (np.ndarray): image array
-        mask (np.ndarray): mask array
+        image (np.ndarray): image array.
+        mask (np.ndarray): mask array.
 
     Returns:
-        Tuple[np.ndarray, np.ndarray]: returns both the image and mask as numpy array
+        Tuple[np.ndarray, np.ndarray]: returns both the image and mask as numpy array.
     """
     image_list = []
     mask_list = []
@@ -85,10 +85,10 @@ def class_percentage(mask: np.ndarray) -> float:
     Calculates the tree pixel percentage in a mask.
 
     Args:
-        mask (np.ndarray): mask
+        mask (np.ndarray): mask.
 
     Returns:
-        float: the percentage value
+        float: the percentage value.
     """
     count = 0
     for i in range(mask.shape[0]):
@@ -110,13 +110,13 @@ def extract_patches(
     Generates image and mask patches based on given minimum and maximum tree cover percntage.
 
     Args:
-        images (np.ndarray): image array
-        masks (np.ndarray): mask array
-        min_limit (float): minimum tree cover
-        max_limit (float): maximum tree cover
+        images (np.ndarray): image array.
+        masks (np.ndarray): mask array.
+        min_limit (float): minimum tree cover.
+        max_limit (float): maximum tree cover.
 
     Returns:
-        Tuple[np.ndarray, np.ndarray]: returns both the image and mask as numpy array
+        Tuple[np.ndarray, np.ndarray]: returns both the image and mask as numpy array.
     """
     index = 1
     image_list = []
