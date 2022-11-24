@@ -133,3 +133,4 @@ dmypy.json
 
 # Big files
 *.tif
+*.npy
